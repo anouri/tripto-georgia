@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip to Georgia - Home</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') no-repeat center center/cover;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        nav {
+            background-color: #1a252f;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+            padding: 8px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lang-switch:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-section {
+            margin-bottom: 50px;
+        }
+
+        .gallery-title {
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="tours.html">Tours</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+        <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
+        <h1 id="mainTitle">Discover Georgia</h1>
+        <p id="mainSub">An unforgettable journey between the Caucasus Mountains and the Black Sea</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro">
+            <h2 id="welcomeTitle">Welcome to your next adventure</h2>
+            <p id="welcomeDesc">Georgia is a country of rich history, stunning landscapes, and ancient cities. Explore the breathtaking nature and vibrant urban life.</p>
+        </section>
+
+        <section class="gallery-section">
+            <h3 class="gallery-title" id="citiesTitle">Vibrant Cities</h3>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600" alt="Tbilisi">
+                    <div class="card-content">
+                        <h4>Tbilisi</h4>
+                        <p id="city1Desc">The capital city, famous for its colorful old town, sulfur baths, and modern architecture.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=600" alt="Batumi">
+                    <div class="card-content">
+                        <h4 id="city2Title">Batumi</h4>
+                        <p id="city2Desc">A modern resort city on the coast of the Black Sea, blending skyscrapers with coastal charm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h3 class="gallery-title" id="natureTitle">Breathtaking Nature</h3>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Svaneti Mountains">
+                    <div class="card-content">
+                        <h4 id="nat1Title">Svaneti Region</h4>
+                        <p id="nat1Desc">High alpine peaks and medieval defense towers surrounded by wild, untouched landscapes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=600" alt="Kazbegi">
+                    <div class="card-content">
+                        <h4>Kazbegi & Gergeti</h4>
+                        <p id="nat2Desc">The iconic Gergeti Trinity Church situated dramatically against Mount Kazbek.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2026 tripto-georgia.com</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                btn: "NL / English",
+                mainTitle: "Discover Georgia",
+                mainSub: "An unforgettable journey between the Caucasus Mountains and the Black Sea",
+                welcomeTitle: "Welcome to your next adventure",
+                welcomeDesc: "Georgia is a country of rich history, stunning landscapes, and ancient cities. Explore the breathtaking nature and vibrant urban life.",
+                citiesTitle: "Vibrant Cities",
+                city1Desc: "The capital city, famous for its colorful old town, sulfur baths, and modern architecture.",
+                city2Title: "Batumi",
+                city2Desc: "A modern resort city on the coast of the Black Sea, blending skyscrapers with coastal charm.",
+                natureTitle: "Breathtaking Nature",
+                nat1Title: "Svaneti Region",
+                nat1Desc: "High alpine peaks and medieval defense towers surrounded by wild, untouched landscapes.",
+                nat2Desc: "The iconic Gergeti Trinity Church situated dramatically against Mount Kazbek."
+            },
+            nl: {
+                btn: "EN / Nederlands",
+                mainTitle: "Ontdek Georgië",
+                mainSub: "Een onvergetelijke reis tussen het Kaukasusgebergte en de Zwarte Zee",
+                welcomeTitle: "Welkom bij jouw volgende avontuur",
+                welcomeDesc: "Georgië is een land met een rijke geschiedenis, adembenemende landschappen en eeuwenoude steden. Ontdek de prachtige natuur en het bruisende stadsleven.",
+                citiesTitle: "Bruisende Steden",
+                city1Desc: "De hoofdstad, beroemd om zijn kleurrijke oude binnenstad, zwavelbaden en moderne architectuur.",
+                city2Title: "Batoemi",
+                city2Desc: "Een moderne badplaats aan de kust van de Zwarte Zee, die wolkenkrabbers combineert met kustcharme.",
+                natureTitle: "Adembenemende Natuur",
+                nat1Title: "Svanetië Regio",
+                nat1Desc: "Hoge alpentoppen en middeleeuwse verdedigingstorens omringd door wilde, ongerepte landschappen.",
+                nat2Desc: "De iconische Gergeti-drievuldigheidskerk, dramatisch gelegen tegen de berg Kazbek."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'en') ? 'nl' : 'en';
+            document.getElementById('langBtn').innerText = translations[currentLang].btn;
+            document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
+            document.getElementById('mainSub').innerText = translations[currentLang].mainSub;
+            document.getElementById('welcomeTitle').innerText = translations[currentLang].welcomeTitle;
+            document.getElementById('welcomeDesc').innerText = translations[currentLang].welcomeDesc;
+            document.getElementById('citiesTitle').innerText = translations[currentLang].citiesTitle;
+            document.getElementById('city1Desc').innerText = translations[currentLang].city1Desc;
+            document.getElementById('city2Title').innerText = translations[currentLang].city2Title;
+            document.getElementById('city2Desc').innerText = translations[currentLang].city2Desc;
+            document.getElementById('natureTitle').innerText = translations[currentLang].natureTitle;
+            document.getElementById('nat1Title').innerText = translations[currentLang].nat1Title;
+            document.getElementById('nat1Desc').innerText = translations[currentLang].nat1Desc;
+            document.getElementById('nat2Desc').innerText = translations[currentLang].nat2Desc;
+        }
+    </script>
+</body>
+</html>
