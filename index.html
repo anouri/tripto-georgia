@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip to Georgia</title>
+    <title>Trip to Georgia - Home</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -28,6 +28,27 @@
             text-align: center;
             padding: 100px 20px;
             position: relative;
+        }
+
+        nav {
+            background-color: #1a252f;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
         }
 
         .lang-switch {
@@ -107,6 +128,12 @@
 </head>
 <body>
 
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="tours.html">Tours</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
     <header>
         <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
         <h1 id="mainTitle">Discover Georgia</h1>
@@ -122,7 +149,6 @@
 
         <section class="gallery-section">
             <h3 class="gallery-title" id="citiesTitle">Vibrant Cities</h3>
-            
             <div class="grid">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600" alt="Tbilisi">
@@ -131,7 +157,6 @@
                         <p id="city1Desc">The capital city, famous for its colorful old town, sulfur baths, and modern architecture.</p>
                     </div>
                 </div>
-
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=600" alt="Batumi">
                     <div class="card-content">
@@ -144,7 +169,6 @@
 
         <section class="gallery-section">
             <h3 class="gallery-title" id="natureTitle">Breathtaking Nature</h3>
-            
             <div class="grid">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Svaneti Mountains">
@@ -153,7 +177,6 @@
                         <p id="nat1Desc">High alpine peaks and medieval defense towers surrounded by wild, untouched landscapes.</p>
                     </div>
                 </div>
-
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=600" alt="Kazbegi">
                     <div class="card-content">
@@ -163,76 +186,6 @@
                 </div>
             </div>
         </section>
-
-
-<section style="display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; font-family: sans-serif; max-width: 1200px; margin: 0 auto;">
-  
-  <div style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h2 style="margin-top: 0; color: #333;">Contact Us</h2>
-    <p style="color: #666; font-size: 14px;">Have questions? Drop us a line using the form below.</p>
-    
-    <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-      <input type="hidden" name="_subject" value="New Website Message (English)">
-      <input type="hidden" name="_replyto" value="%email">
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Name</label>
-        <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Email address</label>
-        <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Subject</label>
-        <input type="text" name="subject" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Message</label>
-        <textarea name="message" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
-      </div>
-      
-      <button type="submit" style="background: #007bff; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.2s;">Send Message</button>
-    </form>
-  </div>
-
-  <div style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h2 style="margin-top: 0; color: #333;">Neem contact op</h2>
-    <p style="color: #666; font-size: 14px;">Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.</p>
-    
-    <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-      <input type="hidden" name="_subject" value="Nieuw websitebericht (Nederlands)">
-      <input type="hidden" name="_replyto" value="%email">
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw Naam</label>
-        <input type="text" name="naam" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw E-mailadres</label>
-        <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Onderwerp</label>
-        <input type="text" name="onderwerp" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      </div>
-      
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw Bericht</label>
-        <textarea name="bericht" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
-      </div>
-      
-      <button type="submit" style="background: #28a745; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.2s;">Bericht verzenden</button>
-    </form>
-  </div>
-
-</section>
-
         
     </div>
 
@@ -241,7 +194,6 @@
     </footer>
 
     <script>
-        // Store translations in simple text structures
         const translations = {
             en: {
                 btn: "NL / English",
@@ -263,7 +215,7 @@
                 mainTitle: "Ontdek Georgië",
                 mainSub: "Een onvergetelijke reis tussen het Kaukasusgebergte en de Zwarte Zee",
                 welcomeTitle: "Welkom bij jouw volgende avontuur",
-                welcomeDesc: "Georgië is een land met een rike geschiedenis, adembenemende landschappen en eeuwenoude steden. Ontdek de prachtige natuur en het bruisende stadsleven.",
+                welcomeDesc: "Georgië is een land met een rijke geschiedenis, adembenemende landschappen en eeuwenoude steden. Ontdek de prachtige natuur en het bruisende stadsleven.",
                 citiesTitle: "Bruisende Steden",
                 city1Desc: "De hoofdstad, beroemd om zijn kleurrijke oude binnenstad, zwavelbaden en moderne architectuur.",
                 city2Title: "Batoemi",
@@ -278,10 +230,7 @@
         let currentLang = 'en';
 
         function toggleLanguage() {
-            // Switch active language key
             currentLang = (currentLang === 'en') ? 'nl' : 'en';
-            
-            // Directly push text changes into the fields
             document.getElementById('langBtn').innerText = translations[currentLang].btn;
             document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
             document.getElementById('mainSub').innerText = translations[currentLang].mainSub;
