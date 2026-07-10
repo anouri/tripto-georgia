@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip to Georgia - Contact Us</title>
+    <title>Trip to Georgia - Contact</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -26,6 +26,7 @@
             color: white;
             text-align: center;
             padding: 40px 20px;
+            position: relative;
         }
 
         nav {
@@ -49,23 +50,35 @@
             background-color: var(--accent-color);
         }
 
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+            padding: 8px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lang-switch:hover {
+            background-color: transparent;
+            color: white;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 600px;
             margin: auto;
             padding: 40px 20px;
         }
 
-        .contact-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
         .form-box {
-            flex: 1;
-            min-width: 300px;
             background: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -73,20 +86,22 @@
         .form-box h2 {
             margin-top: 0;
             color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .form-box p {
             color: #666;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .form-group {
@@ -103,11 +118,11 @@
 
         input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         input:focus, textarea:focus {
@@ -116,20 +131,20 @@
         }
 
         .submit-btn {
+            background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px;
+            padding: 14px;
+            font-size: 16px;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
             transition: background 0.2s;
         }
 
-        .en-btn { background-color: #007bff; }
-        .en-btn:hover { background-color: #0056b3; }
-        .nl-btn { background-color: #28a745; }
-        .nl-btn:hover { background-color: #1e7e34; }
+        .submit-btn:hover {
+            background-color: #1a252f;
+        }
 
         footer {
             background-color: var(--primary-color);
@@ -149,76 +164,41 @@
     </nav>
 
     <header>
-        <h1>Get In Touch / Neem Contact Op</h1>
+        <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
+        <h1 id="pageTitle">Contact Us</h1>
     </header>
 
     <div class="container">
-        <div class="contact-flex">
+        <div class="form-box">
+            <h2 id="formTitle">Send a Message</h2>
+            <p id="formSub">Have questions? Drop us a line using the form below.</p>
             
-            <div class="form-box">
-                <h2>Contact Us</h2>
-                <p>Have questions? Drop us a line using the form below.</p>
+            <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
+                <input type="hidden" name="_subject" id="emailSubject" value="New Inquiry from tripto-georgia.com">
+                <input type="hidden" name="_replyto" value="%email">
                 
-                <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Website Message (English)">
-                    <input type="hidden" name="_replyto" value="%email">
-                    
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Your Email address</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Subject</label>
-                        <input type="text" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Your Message</label>
-                        <textarea name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn en-btn">Send Message</button>
-                </form>
-            </div>
-
-            <div class="form-box">
-                <h2>Neem contact op</h2>
-                <p>Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.</p>
+                <div class="form-group">
+                    <label id="lblName">Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
                 
-                <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
-                    <input type="hidden" name="_subject" value="Nieuw websitebericht (Nederlands)">
-                    <input type="hidden" name="_replyto" value="%email">
-                    
-                    <div class="form-group">
-                        <label>Uw Naam</label>
-                        <input type="text" name="naam" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Uw E-mailadres</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Onderwerp</label>
-                        <input type="text" name="onderwerp" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Uw Bericht</label>
-                        <textarea name="bericht" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn nl-btn">Bericht verzenden</button>
-                </form>
-            </div>
-
+                <div class="form-group">
+                    <label id="lblEmail">Your Email address</label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblSubject">Subject</label>
+                    <input type="text" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblMessage">Your Message</label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="btnSubmit">Send Message</button>
+            </form>
         </div>
     </div>
 
@@ -226,5 +206,47 @@
         <p>&copy; 2026 tripto-georgia.com</p>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                btn: "NL / English",
+                pageTitle: "Contact Us",
+                formTitle: "Send a Message",
+                formSub: "Have questions? Drop us a line using the form below.",
+                lblName: "Your Name",
+                lblEmail: "Your Email address",
+                lblSubject: "Subject",
+                lblMessage: "Your Message",
+                btnSubmit: "Send Message"
+            },
+            nl: {
+                btn: "EN / Nederlands",
+                pageTitle: "Neem contact op",
+                formTitle: "Stuur een bericht",
+                formSub: "Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.",
+                lblName: "Uw Naam",
+                lblEmail: "Uw E-mailadres",
+                lblSubject: "Onderwerp",
+                lblMessage: "Uw Bericht",
+                btnSubmit: "Bericht verzenden"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'en') ? 'nl' : 'en';
+            
+            document.getElementById('langBtn').innerText = translations[currentLang].btn;
+            document.getElementById('pageTitle').innerText = translations[currentLang].pageTitle;
+            document.getElementById('formTitle').innerText = translations[currentLang].formTitle;
+            document.getElementById('formSub').innerText = translations[currentLang].formSub;
+            document.getElementById('lblName').innerText = translations[currentLang].lblName;
+            document.getElementById('lblEmail').innerText = translations[currentLang].lblEmail;
+            document.getElementById('lblSubject').innerText = translations[currentLang].lblSubject;
+            document.getElementById('lblMessage').innerText = translations[currentLang].lblMessage;
+            document.getElementById('btnSubmit').innerText = translations[currentLang].btnSubmit;
+        }
+    </script>
 </body>
 </html>
