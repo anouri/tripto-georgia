@@ -1,231 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip to Georgia</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --bg-light: #f8f9fa;
-            --text-dark: #333;
-        }
+<section style="display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; font-family: sans-serif; max-width: 1200px; margin: 0 auto;">
+  
+  <div style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="margin-top: 0; color: #333;">Contact Us</h2>
+    <p style="color: #666; font-size: 14px;">Have questions? Drop us a line using the form below.</p>
+    
+    <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="hidden" name="_subject" value="New Website Message (English)">
+      <input type="hidden" name="_replyto" value="%email">
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Name</label>
+        <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Email address</label>
+        <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Subject</label>
+        <input type="text" name="subject" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Your Message</label>
+        <textarea name="message" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+      </div>
+      
+      <button type="submit" style="background: #007bff; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.2s;">Send Message</button>
+    </form>
+  </div>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-        }
+  <div style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="margin-top: 0; color: #333;">Neem contact op</h2>
+    <p style="color: #666; font-size: 14px;">Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.</p>
+    
+    <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="hidden" name="_subject" value="Nieuw websitebericht (Nederlands)">
+      <input type="hidden" name="_replyto" value="%email">
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw Naam</label>
+        <input type="text" name="naam" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw E-mailadres</label>
+        <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Onderwerp</label>
+        <input type="text" name="onderwerp" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #555;">Uw Bericht</label>
+        <textarea name="bericht" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+      </div>
+      
+      <button type="submit" style="background: #28a745; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.2s;">Bericht verzenden</button>
+    </form>
+  </div>
 
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') no-repeat center center/cover;
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-        }
-
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: white;
-            color: var(--primary-color);
-            border: 2px solid white;
-            padding: 8px 16px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .lang-switch:hover {
-            background-color: transparent;
-            color: white;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .gallery-section {
-            margin-bottom: 50px;
-        }
-
-        .gallery-title {
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 25px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
-        <h1 id="mainTitle">Discover Georgia</h1>
-        <p id="mainSub">An unforgettable journey between the Caucasus Mountains and the Black Sea</p>
-    </header>
-
-    <div class="container">
-        
-        <section class="intro">
-            <h2 id="welcomeTitle">Welcome to your next adventure</h2>
-            <p id="welcomeDesc">Georgia is a country of rich history, stunning landscapes, and ancient cities. Explore the breathtaking nature and vibrant urban life.</p>
-        </section>
-
-        <section class="gallery-section">
-            <h3 class="gallery-title" id="citiesTitle">Vibrant Cities</h3>
-            
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600" alt="Tbilisi">
-                    <div class="card-content">
-                        <h4>Tbilisi</h4>
-                        <p id="city1Desc">The capital city, famous for its colorful old town, sulfur baths, and modern architecture.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=600" alt="Batumi">
-                    <div class="card-content">
-                        <h4 id="city2Title">Batumi</h4>
-                        <p id="city2Desc">A modern resort city on the coast of the Black Sea, blending skyscrapers with coastal charm.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gallery-section">
-            <h3 class="gallery-title" id="natureTitle">Breathtaking Nature</h3>
-            
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Svaneti Mountains">
-                    <div class="card-content">
-                        <h4 id="nat1Title">Svaneti Region</h4>
-                        <p id="nat1Desc">High alpine peaks and medieval defense towers surrounded by wild, untouched landscapes.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=600" alt="Kazbegi">
-                    <div class="card-content">
-                        <h4>Kazbegi & Gergeti</h4>
-                        <p id="nat2Desc">The iconic Gergeti Trinity Church situated dramatically against Mount Kazbek.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 tripto-georgia.com</p>
-    </footer>
-
-    <script>
-        // Store translations in simple text structures
-        const translations = {
-            en: {
-                btn: "NL / English",
-                mainTitle: "Discover Georgia",
-                mainSub: "An unforgettable journey between the Caucasus Mountains and the Black Sea",
-                welcomeTitle: "Welcome to your next adventure",
-                welcomeDesc: "Georgia is a country of rich history, stunning landscapes, and ancient cities. Explore the breathtaking nature and vibrant urban life.",
-                citiesTitle: "Vibrant Cities",
-                city1Desc: "The capital city, famous for its colorful old town, sulfur baths, and modern architecture.",
-                city2Title: "Batumi",
-                city2Desc: "A modern resort city on the coast of the Black Sea, blending skyscrapers with coastal charm.",
-                natureTitle: "Breathtaking Nature",
-                nat1Title: "Svaneti Region",
-                nat1Desc: "High alpine peaks and medieval defense towers surrounded by wild, untouched landscapes.",
-                nat2Desc: "The iconic Gergeti Trinity Church situated dramatically against Mount Kazbek."
-            },
-            nl: {
-                btn: "EN / Nederlands",
-                mainTitle: "Ontdek Georgië",
-                mainSub: "Een onvergetelijke reis tussen het Kaukasusgebergte en de Zwarte Zee",
-                welcomeTitle: "Welkom bij jouw volgende avontuur",
-                welcomeDesc: "Georgië is een land met een rike geschiedenis, adembenemende landschappen en eeuwenoude steden. Ontdek de prachtige natuur en het bruisende stadsleven.",
-                citiesTitle: "Bruisende Steden",
-                city1Desc: "De hoofdstad, beroemd om zijn kleurrijke oude binnenstad, zwavelbaden en moderne architectuur.",
-                city2Title: "Batoemi",
-                city2Desc: "Een moderne badplaats aan de kust van de Zwarte Zee, die wolkenkrabbers combineert met kustcharme.",
-                natureTitle: "Adembenemende Natuur",
-                nat1Title: "Svanetië Regio",
-                nat1Desc: "Hoge alpentoppen en middeleeuwse verdedigingstorens omringd door wilde, ongerepte landschappen.",
-                nat2Desc: "De iconische Gergeti-drievuldigheidskerk, dramatisch gelegen tegen de berg Kazbek."
-            }
-        };
-
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            // Switch active language key
-            currentLang = (currentLang === 'en') ? 'nl' : 'en';
-            
-            // Directly push text changes into the fields
-            document.getElementById('langBtn').innerText = translations[currentLang].btn;
-            document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
-            document.getElementById('mainSub').innerText = translations[currentLang].mainSub;
-            document.getElementById('welcomeTitle').innerText = translations[currentLang].welcomeTitle;
-            document.getElementById('welcomeDesc').innerText = translations[currentLang].welcomeDesc;
-            document.getElementById('citiesTitle').innerText = translations[currentLang].citiesTitle;
-            document.getElementById('city1Desc').innerText = translations[currentLang].city1Desc;
-            document.getElementById('city2Title').innerText = translations[currentLang].city2Title;
-            document.getElementById('city2Desc').innerText = translations[currentLang].city2Desc;
-            document.getElementById('natureTitle').innerText = translations[currentLang].natureTitle;
-            document.getElementById('nat1Title').innerText = translations[currentLang].nat1Title;
-            document.getElementById('nat1Desc').innerText = translations[currentLang].nat1Desc;
-            document.getElementById('nat2Desc').innerText = translations[currentLang].nat2Desc;
-        }
-    </script>
-</body>
-</html>
+</section>
