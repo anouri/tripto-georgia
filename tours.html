@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip to Georgia - Contact</title>
+    <title>Trip to Georgia - Planned Tours</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -71,79 +71,31 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
             margin: auto;
             padding: 40px 20px;
         }
 
-        .form-box {
+        .tour-card {
             background: white;
-            padding: 40px;
             border-radius: 8px;
+            padding: 35px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
         }
 
-        .form-box h2 {
-            margin-top: 0;
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
+        .tour-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-color);
             margin-bottom: 10px;
         }
 
-        .form-box p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        label {
-            font-weight: bold;
-            font-size: 14px;
-            color: #555;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .submit-btn:hover {
-            background-color: #1a252f;
+        .tour-title {
+            font-size: 26px;
+            margin: 0 0 15px 0;
+            color: var(--primary-color);
         }
 
         footer {
@@ -159,47 +111,23 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="tours.html">Tours</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="tours.html" class="active">Tours</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <header>
         <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
-        <h1 id="pageTitle">Contact Us</h1>
+        <h1 id="pageTitle">Our Planned Tours</h1>
     </header>
 
     <div class="container">
-        <div class="form-box">
-            <h2 id="formTitle">Send a Message</h2>
-            <p id="formSub">Have questions? Drop us a line using the form below.</p>
-            
-            <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
-                <input type="hidden" name="_subject" id="emailSubject" value="New Inquiry from tripto-georgia.com">
-                <input type="hidden" name="_replyto" value="%email">
-                
-                <div class="form-group">
-                    <label id="lblName">Your Name</label>
-                    <input type="text" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label id="lblEmail">Your Email address</label>
-                    <input type="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label id="lblSubject">Subject</label>
-                    <input type="text" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label id="lblMessage">Your Message</label>
-                    <textarea name="message" rows="6" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn" id="btnSubmit">Send Message</button>
-            </form>
+        
+        <div class="tour-card">
+            <div class="tour-date">10.09.2026 - 20.09.2026</div>
+            <h2 class="tour-title" id="tour1Title">Caucasus Mountains and Batumi</h2>
+            <p id="tour1Desc">Join us for an unforgettable 10-day tour exploring the spectacular peaks of the Caucasus Mountains and enjoying the coastal beauty of Batumi.</p>
         </div>
+
     </div>
 
     <footer>
@@ -210,25 +138,15 @@
         const translations = {
             en: {
                 btn: "NL / English",
-                pageTitle: "Contact Us",
-                formTitle: "Send a Message",
-                formSub: "Have questions? Drop us a line using the form below.",
-                lblName: "Your Name",
-                lblEmail: "Your Email address",
-                lblSubject: "Subject",
-                lblMessage: "Your Message",
-                btnSubmit: "Send Message"
+                pageTitle: "Our Planned Tours",
+                tour1Title: "Caucasus Mountains and Batumi",
+                tour1Desc: "Join us for an unforgettable 10-day tour exploring the spectacular peaks of the Caucasus Mountains and enjoying the coastal beauty of Batumi."
             },
             nl: {
                 btn: "EN / Nederlands",
-                pageTitle: "Neem contact op",
-                formTitle: "Stuur een bericht",
-                formSub: "Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.",
-                lblName: "Uw Naam",
-                lblEmail: "Uw E-mailadres",
-                lblSubject: "Onderwerp",
-                lblMessage: "Uw Bericht",
-                btnSubmit: "Bericht verzenden"
+                pageTitle: "Onze Geplande Reizen",
+                tour1Title: "Kaukasusgebergte en Batoemi",
+                tour1Desc: "Ga met ons mee op een onvergetelijke 10-daagse rondreis waarin we de spectaculaire toppen van het Kaukasusgebergte verkennen en genieten van de prachtige kust van Batoemi."
             }
         };
 
@@ -236,16 +154,10 @@
 
         function toggleLanguage() {
             currentLang = (currentLang === 'en') ? 'nl' : 'en';
-            
             document.getElementById('langBtn').innerText = translations[currentLang].btn;
             document.getElementById('pageTitle').innerText = translations[currentLang].pageTitle;
-            document.getElementById('formTitle').innerText = translations[currentLang].formTitle;
-            document.getElementById('formSub').innerText = translations[currentLang].formSub;
-            document.getElementById('lblName').innerText = translations[currentLang].lblName;
-            document.getElementById('lblEmail').innerText = translations[currentLang].lblEmail;
-            document.getElementById('lblSubject').innerText = translations[currentLang].lblSubject;
-            document.getElementById('lblMessage').innerText = translations[currentLang].lblMessage;
-            document.getElementById('btnSubmit').innerText = translations[currentLang].btnSubmit;
+            document.getElementById('tour1Title').innerText = translations[currentLang].tour1Title;
+            document.getElementById('tour1Desc').innerText = translations[currentLang].tour1Desc;
         }
     </script>
 </body>
