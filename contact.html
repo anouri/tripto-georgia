@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip to Georgia - Contact Us</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        nav {
+            background-color: #1a252f;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .form-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-box h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .form-box p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .submit-btn {
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .en-btn { background-color: #007bff; }
+        .en-btn:hover { background-color: #0056b3; }
+        .nl-btn { background-color: #28a745; }
+        .nl-btn:hover { background-color: #1e7e34; }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tours.html">Tours</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Get In Touch / Neem Contact Op</h1>
+    </header>
+
+    <div class="container">
+        <div class="contact-flex">
+            
+            <div class="form-box">
+                <h2>Contact Us</h2>
+                <p>Have questions? Drop us a line using the form below.</p>
+                
+                <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Website Message (English)">
+                    <input type="hidden" name="_replyto" value="%email">
+                    
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Email address</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn en-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="form-box">
+                <h2>Neem contact op</h2>
+                <p>Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.</p>
+                
+                <form action="https://formsubmit.co/r.rezam@yahoo.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nieuw websitebericht (Nederlands)">
+                    <input type="hidden" name="_replyto" value="%email">
+                    
+                    <div class="form-group">
+                        <label>Uw Naam</label>
+                        <input type="text" name="naam" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Uw E-mailadres</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Onderwerp</label>
+                        <input type="text" name="onderwerp" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Uw Bericht</label>
+                        <textarea name="bericht" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn nl-btn">Bericht verzenden</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 tripto-georgia.com</p>
+    </footer>
+
+</body>
+</html>
