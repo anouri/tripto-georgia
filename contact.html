@@ -174,6 +174,40 @@
             <p id="formSub">Have questions? Drop us a line using the form below.</p>
             
             <form action="https://formsubmit.co/ahmad.nouri@gmail.com" method="POST">
+
+                <input type="hidden" name="_next" value="https://www.tripto-georgia.com/index.html">
+                
+                <input type="hidden" name="_subject" id="emailSubject" value="New Inquiry from tripto-georgia.com">
+                <input type="hidden" name="_replyto" value="%email">
+                
+                <div class="form-group">
+                    <label id="lblName">Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblEmail">Your Email address</label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblSubject">Subject</label>
+                    <input type="text" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblMessage">Your Message</label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="btnSubmit">Send Message</button>
+            </form>
+
+
+
+
+
+                
                 <input type="hidden" name="_subject" id="emailSubject" value="New Inquiry from tripto-georgia.com">
                 <input type="hidden" name="_replyto" value="%email">
                 
