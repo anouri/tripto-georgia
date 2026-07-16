@@ -297,10 +297,13 @@
                 }
             })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+                // Read the JSON response even if the server returned a 500 or 400 error
+                return response.json().then(data => {
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Server error');
+                    }
+                    return data;
+                });
             })
             .then(data => {
                 if (data.status === 'success') {
@@ -319,7 +322,8 @@
                 }
             })
             .catch(error => {
-                alert('Oops! There was a problem submitting your form.');
+                // Alerts the actual, detailed error message
+                alert('Error: ' + error.message);
                 submitBtn.disabled = false;
                 submitBtn.innerText = translations[currentLang].btnSubmit;
             });
