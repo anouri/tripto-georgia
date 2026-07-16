@@ -69,8 +69,8 @@ $email_body = "
 </html>
 ";
 
-// 4. Send the Email
-$success = mail($to, $email_subject, $email_body, implode("\r\n", $headers));
+// 4. Send the Email using the secure envelope sender parameter (-f)
+$success = mail($to, $email_subject, $email_body, implode("\r\n", $headers), "-finfo@tripto-georgia.com");
 
 if ($success) {
     echo json_encode(["status" => "success", "message" => "Message sent successfully."]);
