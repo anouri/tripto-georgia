@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip to Georgia - Contact</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        nav {
+            background-color: #1a252f;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+            padding: 8px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lang-switch:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .form-box h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-box p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a252f;
+        }
+
+        /* Success Message Styling */
+        .success-message {
+            display: none; /* Hidden by default */
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .success-message h3 {
+            color: #2ecc71;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tours.html">Tours</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <header>
+        <button class="lang-switch" id="langBtn" onclick="toggleLanguage()">NL / English</button>
+        <h1 id="pageTitle">Contact Us</h1>
+    </header>
+
+    <div class="container">
+        <div class="form-box">
+            <div id="formContent">
+                <h2 id="formTitle">Send a Message</h2>
+                <p id="formSub">Have questions? Drop us a line using the form below.</p>
+                 
+
+                <form id="contactForm" action="https://formsubmit.co/ahmad.nouri@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_cc" value="r.rezam@yahoo.com,info@tripto-georgia.com">
+
+                    <input type="hidden" name="_subject" id="emailSubject" value="New Inquiry from tripto-georgia.com">
+                    <input type="hidden" name="_replyto" value="%email">
+                    
+                    <div class="form-group">
+                        <label id="lblName">Your Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="lblEmail">Your Email address</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="lblSubject">Subject</label>
+                        <input type="text" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="lblMessage">Your Message</label>
+                        <textarea name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="btnSubmit">Send Message</button>
+                </form>
+
+            </div>
+
+            <div id="successContainer" class="success-message">
+                <h3 id="thankYouTitle">Thank you for your message!</h3>
+                <p id="thankYouSub">It has been sent successfully. You are being redirected to the home page...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 tripto-georgia.com</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                btn: "NL / English",
+                pageTitle: "Contact Us",
+                formTitle: "Send a Message",
+                formSub: "Have questions? Drop us a line using the form below.",
+                lblName: "Your Name",
+                lblEmail: "Your Email address",
+                lblSubject: "Subject",
+                lblMessage: "Your Message",
+                btnSubmit: "Send Message",
+                thankYouTitle: "Thank you for your message!",
+                thankYouSub: "It has been sent successfully. You are being redirected to the home page..."
+            },
+            nl: {
+                btn: "EN / Nederlands",
+                pageTitle: "Neem contact op",
+                formTitle: "Stuur een bericht",
+                formSub: "Heeft u vragen? Stuur ons een bericht via het onderstaande formulier.",
+                lblName: "Uw Naam",
+                lblEmail: "Uw E-mailadres",
+                lblSubject: "Onderwerp",
+                lblMessage: "Uw Bericht",
+                btnSubmit: "Bericht verzenden",
+                thankYouTitle: "Hartelijk dank voor uw bericht!",
+                thankYouSub: "Het is succesvol verzonden. U wordt nu doorgestuurd naar de startpagina..."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'en') ? 'nl' : 'en';
+            
+            document.getElementById('langBtn').innerText = translations[currentLang].btn;
+            document.getElementById('pageTitle').innerText = translations[currentLang].pageTitle;
+            document.getElementById('formTitle').innerText = translations[currentLang].formTitle;
+            document.getElementById('formSub').innerText = translations[currentLang].formSub;
+            document.getElementById('lblName').innerText = translations[currentLang].lblName;
+            document.getElementById('lblEmail').innerText = translations[currentLang].lblEmail;
+            document.getElementById('lblSubject').innerText = translations[currentLang].lblSubject;
+            document.getElementById('lblMessage').innerText = translations[currentLang].lblMessage;
+            document.getElementById('btnSubmit').innerText = translations[currentLang].btnSubmit;
+            document.getElementById('thankYouTitle').innerText = translations[currentLang].thankYouTitle;
+            document.getElementById('thankYouSub').innerText = translations[currentLang].thankYouSub;
+        }
+
+        // JavaScript to handle the form submission in the background
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents default page refresh / FormSubmit page load
+
+            const form = event.target;
+            const submitBtn = document.getElementById('btnSubmit');
+            
+            // Change button status during processing
+            submitBtn.innerText = currentLang === 'en' ? "Sending..." : "Verzenden...";
+            submitBtn.disabled = true;
+
+            // Submit form data using Fetch API
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                // Hide the form fields
+                document.getElementById('formContent').style.display = 'none';
+                
+                // Show the beautiful thank you message
+                document.getElementById('successContainer').style.display = 'block';
+
+                // Automatically redirect to homepage index.html after 4 seconds
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 4000);
+            })
+            .catch(error => {
+                alert('Oops! There was a problem submitting your form.');
+                submitBtn.disabled = false;
+                submitBtn.innerText = translations[currentLang].btnSubmit;
+            });
+        });
+    </script>
+</body>
+</html>
